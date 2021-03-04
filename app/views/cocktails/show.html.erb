@@ -9,7 +9,7 @@
     <li class="list-group-item flex-fill"><%= i.description %></li>
     <li class="list-group-item flex-fill"><%= i.ingredient.name %></li>
     <li class="list-group-item">
-      <button class="btn btn-danger remove-item">remove</button>
+      <button class="btn btn-danger remove-item"><i class="far fa-trash-alt"></i></button>
       <%= link_to 'remove', dose_path(i), method: :delete, class: 'd-none' %>
     </li>
   </ul>
@@ -24,3 +24,5 @@
   })
     </script>
 <% end %>
+
+ <%= render 'modal_bottom' %>

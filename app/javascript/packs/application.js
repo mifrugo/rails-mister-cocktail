@@ -15,8 +15,14 @@ import { initSelect2 } from '../components/init_select2';
 
 import { initSweetalert } from '../components/init_sweetalert';
 
+import { showSearch } from '../components/init_search'
+
+import { removeAlert } from '../components/init_alert'
+
 document.addEventListener("turbolinks:load", function () {
   initSelect2();
+  showSearch();
+  removeAlert();
 
   document.querySelectorAll('.remove-item').forEach(item => {
 
@@ -32,7 +38,11 @@ document.addEventListener("turbolinks:load", function () {
       }
     });
 
-  })
+  });
+
+  if ( document.body.classList.contains('cocktails-create') ) {
+    $('#newCocktail').modal('toggle');
+  }
 
 });
 

@@ -1,21 +1,15 @@
 <div class="row row-cols-1 row-cols-md-4">
   <% @cocktails.each do |c| %>
-    <div class="col mt-3">
+    <div class="col mt-3 text-center">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= c.name %></h5>
           <p class="card-text"><%= pluralize(c.ingredients.count, 'ingredient') %></p>
-          <%= link_to "Discover it!", cocktail_path(c), class: 'btn btn-primary' %>
+          <%= link_to "Drink it!", cocktail_path(c), class: 'btn btn-light' %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 
-<% if params[:action] == 'create' %>
-  <script>
-  document.addEventListener('turbolinks:load', () => {
-    $('#newCocktail').modal('toggle')
-  })
-    </script>
-<% end %>
+ <%= render 'modal_bottom' %>
