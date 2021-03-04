@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.cocktails-index {
+
+  .jumbotron {
+    background-image: url(https://www.jetsetter.com/wp-content/uploads/sites/7/2020/04/GettyImages-1066136250-1380x690.jpg);
+    background-size: cover;
+    height: 100vh;
+
+    .container {
+      margin-top: 25vh;
+      background: rgba(255, 255, 255, .6);
+      border-radius: 10px;
+      text-align: center;
+      padding: 3vh;
+      color: black!important;
+    }
+
+  }
+
+  .navbar {
+    background-color: transparent!important;
+    a {
+      color: white;
+    }
+  }
+
+}

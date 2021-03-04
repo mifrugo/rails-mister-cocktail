@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid pt-0 pb-4">
+  <nav class="navbar bg-light mb-4">
+    <div class="flex-grow-1">
+      <%= link_to image_tag('https://www.flaticon.com/svg/vstatic/svg/2439/2439663.svg?token=exp=1614867212~hmac=b32d9ffa559a327cf98349161f1da8a9', style: 'height:30px;') + ' The cocktailz', root_path, class: 'navbar-brand' %>
+    </div>
+    <form class="form-inline mr-2">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <%= render('/cocktails/modal') %>
+  </nav>
+  <div class="container text-white">
+    <h1 class="display-4"><%= @title %></h1>
+    <p class="lead"><%= @description %></p>
+  </div>
+</div>

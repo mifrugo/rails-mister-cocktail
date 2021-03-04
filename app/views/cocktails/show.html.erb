@@ -1,0 +1,26 @@
+<h1>Ingredients</h1>
+
+<% if @cocktail.doses.empty? %>
+  <em>No ingredients yet!</em>
+<% end %>
+
+<% @cocktail.doses.each do |i| %>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item flex-fill"><%= i.description %></li>
+    <li class="list-group-item flex-fill"><%= i.ingredient.name %></li>
+    <li class="list-group-item">
+      <button class="btn btn-danger remove-item">remove</button>
+      <%= link_to 'remove', dose_path(i), method: :delete, class: 'd-none' %>
+    </li>
+  </ul>
+<% end  %>
+
+<%= render 'dose' %>
+
+<% if flash[:error] %>
+  <script>
+  document.addEventListener('turbolinks:load', () => {
+    $('#newDose').modal('toggle')
+  })
+    </script>
+<% end %>

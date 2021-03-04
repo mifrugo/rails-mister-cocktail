@@ -7,7 +7,36 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+import jquery from 'jquery';
+window.$ = window.jquery = jquery;
 import 'bootstrap';
+
+import { initSelect2 } from '../components/init_select2';
+
+import { initSweetalert } from '../components/init_sweetalert';
+
+document.addEventListener("turbolinks:load", function () {
+  initSelect2();
+
+  document.querySelectorAll('.remove-item').forEach(item => {
+
+    initSweetalert(item, {
+      title: "Are you sure?",
+      text: "This action cannot be reversed",
+      icon: "error",
+      buttons: true,
+    }, (value) => {
+      if (value) {
+        let next = item.nextSibling.nextSibling;
+        next.click();
+      }
+    });
+
+  })
+
+});
+
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
