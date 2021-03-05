@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'reviews/create'
-  get 'reviews/destroy'
   root to: 'cocktails#index'
 
   get '/cocktails', to: 'cocktails#index'
@@ -17,4 +15,6 @@ Rails.application.routes.draw do
 
   post '/cocktails/:id/review', to: 'reviews#create', as: 'cocktail_reviews'
   delete '/reviews/:id', to: 'reviews#destroy', as: :review
+
+  get '/search', to: 'search#index'
 end

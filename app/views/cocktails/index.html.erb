@@ -1,3 +1,7 @@
+<% if params[:controller] == 'search' %>
+  <%= render '/cocktails/search_header' %>
+<% end %>
+
 <div class="row row-cols-1 row-cols-md-4">
   <% @cocktails.each do |c| %>
     <div class="col mt-3 text-center">
@@ -17,4 +21,4 @@
   <% end %>
 </div>
 
- <%= render 'modal_bottom' %>
+ <%= render '/cocktails/modal_bottom' %>

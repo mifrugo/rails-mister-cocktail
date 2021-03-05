@@ -3,8 +3,8 @@
     <div class="flex-grow-1">
       <%= link_to (image_tag('cocktail.svg') + ' The cocktailz'), root_path, class: 'navbar-brand' %>
     </div>
-    <form id="search" class="form-inline mr-2 d-none">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form id="search" class="form-inline mr-2 d-none" action="/search">
+      <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-success my-2 my-sm-0 text-white" type="submit"><i class="fas fa-search"></i></button>
     </form>
     <button id="show-search" class="btn btn-success my-2 my-sm-0 text-white mr-2" type="button"><i class="fas fa-search"></i></button>
