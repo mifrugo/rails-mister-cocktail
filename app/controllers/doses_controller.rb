@@ -7,6 +7,7 @@ class DosesController < ApplicationController
     @dose.cocktail = Cocktail.find(params[:id])
 
     flash[:error] = @dose.errors unless @dose.save
+    flash[:redirect] = 'dose'
 
     redirect_to cocktail_path(@dose.cocktail)
   end

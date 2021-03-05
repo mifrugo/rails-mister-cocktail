@@ -6,11 +6,10 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.cocktail = @cocktail
 
-    if @review.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      raise
-    end
+    flash[:error] = @review.errors unless @review.save
+    flash[:redirect] = 'review'
+
+    redirect_to cocktail_path(@cocktail)
   end
 
   def destroy

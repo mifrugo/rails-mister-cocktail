@@ -50,7 +50,7 @@
 <% if flash[:error] %>
   <script>
   document.addEventListener('turbolinks:load', () => {
-    $('#newDose').modal('toggle')
+    $('#new<%= flash[:redirect].capitalize %>').modal('toggle')
   })
     </script>
 <% end %>

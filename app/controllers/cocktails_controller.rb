@@ -17,6 +17,10 @@ class CocktailsController < ApplicationController
     @cocktail_button = 'Update'
     @dose = Dose.new
     @review = Review.new
+
+    flash[:error]&.each do |k, v|
+      v.each { |v_f| instance_eval("@#{flash[:redirect]}").errors.add k, v_f }
+    end
   end
 
   def create
