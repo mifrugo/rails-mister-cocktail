@@ -22,11 +22,17 @@ import { removeAlert } from '../components/init_alert'
 
 import { initTimeAgo } from '../components/init_timeago'
 
+import { navBar } from '../components/init_navbar'
+
+import { showCocktails } from '../components/init_cocktailsHome'
+
 document.addEventListener("turbolinks:load", function () {
   initSelect2();
   showSearch();
   removeAlert();
   initTimeAgo();
+  navBar();
+  showCocktails();
 
   document.querySelectorAll('.remove-item').forEach(item => {
 

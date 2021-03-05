@@ -7,7 +7,7 @@
     <div class="col mt-3 text-center">
       <div class="card" style="height: 200px">
         <% if c.photo.attached? %>
-          <%= cl_image_tag c.photo.key, class: 'card-img', height: 200, width: 150 %>
+          <%= cl_image_tag c.photo.key, class: 'card-img', height: 200 %>
           <div class="card-img-overlay text-white align-items-center d-flex flex-column justify-content-center">
         <% else %>
           <div class="card-body align-items-center d-flex flex-column justify-content-center">

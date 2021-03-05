@@ -2,9 +2,13 @@ class SearchController < ApplicationController
   def index
     lookup = params[:q].downcase
 
-    @cocktails = Cocktail.where('lower(name) like ?', "%#{lookup}%") if lookup.length >= 3
+    if lookup.length >= 3
+      @cocktails = Cocktail.where('lower(name) like ?', "%#{lookup}%")
+      @cocktail = Cocktail.new
+      render '/cocktails/index'
+    else
+      redirect_to root_path
+    end
 
-    @cocktail = Cocktail.new
-    render '/cocktails/index'
   end
 end
