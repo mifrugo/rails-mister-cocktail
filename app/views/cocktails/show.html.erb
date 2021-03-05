@@ -1,4 +1,11 @@
-<h1>Ingredients</h1>
+<div class="my-5 text-center">
+<h1 class="mb-1"><%= @cocktail.name %></h1>
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, crop: :fill %>
+<% end %>
+</div>
+
+<h3>Ingredients</h3>
 
 <% if @cocktail.doses.empty? %>
   <em>No ingredients yet!</em>
@@ -21,7 +28,7 @@
 
 <%= render 'dose' %>
 
-<h1 class="mt-4">Reviews</h1>
+<h3 class="mt-4">Reviews</h3>
 
 <% if @cocktail.reviews.empty? %>
   <em>No review yet!</em>

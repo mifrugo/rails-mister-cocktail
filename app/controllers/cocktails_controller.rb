@@ -1,5 +1,4 @@
 class CocktailsController < ApplicationController
-
   before_action :all_cocktail, only: %i[index]
   before_action :single_cocktail, only: %i[show update]
 
@@ -46,7 +45,7 @@ class CocktailsController < ApplicationController
   private
 
   def cocktails_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
   def single_cocktail
