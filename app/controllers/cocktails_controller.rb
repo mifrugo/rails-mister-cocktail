@@ -16,6 +16,7 @@ class CocktailsController < ApplicationController
     @title = @cocktail.name
     @cocktail_button = 'Update'
     @dose = Dose.new
+    @review = Review.new
   end
 
   def create

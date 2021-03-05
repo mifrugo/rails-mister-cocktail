@@ -20,10 +20,13 @@ import { showSearch } from '../components/init_search'
 
 import { removeAlert } from '../components/init_alert'
 
+import { initTimeAgo } from '../components/init_timeago'
+
 document.addEventListener("turbolinks:load", function () {
   initSelect2();
   showSearch();
   removeAlert();
+  initTimeAgo();
 
   document.querySelectorAll('.remove-item').forEach(item => {
 

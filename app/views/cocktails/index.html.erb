@@ -4,6 +4,11 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"><%= c.name %></h5>
+          <p class="card-text">
+             <% unless c.reviews.empty? %>
+              <%= '<span class="badge badge-warning p-1 mr-1"><i class="fas fa-star"></i></span>'.html_safe * ( c.reviews.sum('rating') / c.reviews.count ).to_f %>
+            <% end %>
+          </p>
           <p class="card-text"><%= pluralize(c.ingredients.count, 'ingredient') %></p>
           <%= link_to "Drink it!", cocktail_path(c), class: 'btn btn-light' %>
         </div>

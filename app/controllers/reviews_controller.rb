@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :single_review, only: %i[destroy]
 
   def create
-    @cocktail = Cocktail.find(params[:cocktail_id])
+    @cocktail = Cocktail.find(params[:id])
     @review = Review.new(review_params)
     @review.cocktail = @cocktail
 
